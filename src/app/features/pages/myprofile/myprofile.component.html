@@ -1,5 +1,5 @@
 <!-- Content -->
-<section id="content">
+<section id="content" *ngIf="mostrar">
     <div class="container">
         <div class="row">
             <div class="col-3 col-12-medium">
@@ -10,9 +10,9 @@
                             <h2>Menú</h2>
                         </header>
                         <ul class="link-list">
-                            <li><a href="#">Ver todos mis posteos</a></li>
-                            <li><a href="#">Ver todos mis álbumes</a></li>
-                            <li><a href="#">Ver mis TO DO's</a></li>
+                            <li><a (click)=posts()>Ver todos mis posteos</a></li>
+                            <li><a (click)=albums()>Ver todos mis álbumes</a></li>
+                            <li><a (click)=todos()>Ver mis TO DO's</a></li>
                         </ul>
                     </section>
             </div>
@@ -22,11 +22,9 @@
                 <!-- Main Content -->
                 <section>
                     <header>
-                        <h2>Nombre y Apellido</h2>
+                        <h2> {{ user.name }} </h2>
                     </header>
-                    <ul class="link-list">
-                        <li><img src="assets/images/pic01.jpg" alt="" /></li>
-                    </ul>
+                    <img src="https://avatars.dicebear.com/api/initials/{{user.name}}.svg" alt="avatar image" style="max-height: 250px;"/>
                 </section>
 
                 <section>
@@ -34,16 +32,7 @@
                         <h2>Sitio Wep</h2>
                     </header>
                     <ul class="link-list">
-                        <li><a href="#">www.ponerpaginaweb.com</a></li>
-                    </ul>
-                </section>
-
-                <section>
-                    <header>
-                        <h2>Sitio Wep</h2>
-                    </header>
-                    <ul class="link-list">
-                        <li><a href="#">www.ponerpaginaweb.com</a></li>
+                        <li><a href="#"> {{ user.website }} </a></li>
                     </ul>
                 </section>
 
@@ -52,13 +41,13 @@
                         <h2>Empresa</h2>
                     </header>
                     <p>
-                        Romaguera-Crona
+                        {{ user.company.name }}
                     </p>
                     <p>
-                        Multi-layered client-server neural-net
+                        {{ user.company.catchPhrase}}
                     </p>
                     <p>
-                        harness real-time e-markets
+                        {{ user.company.bs }}
                     </p>
                 </section>
 
