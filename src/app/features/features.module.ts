@@ -5,13 +5,15 @@ import { FeaturesRoutingModule } from './features-routing.module';
 import { MyprofileComponent } from './pages/myprofile/myprofile.component';
 import { HomeComponent } from './pages/home/home.component';
 import { UsersComponent } from './pages/users/users.component';
+import { PostsComponent } from './pages/posts/posts.component';
 
 
 @NgModule({
   declarations: [
     MyprofileComponent,
     HomeComponent,
-    UsersComponent
+    UsersComponent,
+    PostsComponent
   ],
   imports: [
     CommonModule,

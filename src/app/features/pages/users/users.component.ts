@@ -15,7 +15,7 @@ export class UsersComponent implements OnInit {
   constructor(private jsonService: JsonPlaceholderService) { }
 
   ngOnInit(): void {
-    this.jsonService.getUsers().subscribe( users => {
+    this.jsonService.getAllUsers().subscribe( users => {
       this.users = users;
       this.mostrar = true;
     });

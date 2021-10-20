@@ -1,0 +1,15 @@
+<!-- Content -->
+<section id=content *ngIf="mostrar">
+    <div class="container">
+        <div class="row">
+            <div class="col-4 col-12-medium" *ngFor="let post of posts; let i= index">
+                <!-- Main Content -->
+                <section>
+                    <header>
+                        <h2> {{ posts[i].title }} </h2>
+                    </header>
+                </section>
+            </div>
+        </div>
+    </div>
+</section>
