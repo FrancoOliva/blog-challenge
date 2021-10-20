@@ -4,6 +4,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { MyprofileComponent } from './pages/myprofile/myprofile.component';
 import { PostsComponent } from './pages/posts/posts.component';
 import { UsersComponent } from './pages/users/users.component';
+import { AlbumsComponent } from './pages/albums/albums.component';
+import { TodosComponent } from './pages/todos/todos.component';
 
 const routes: Routes = [
   {
@@ -21,6 +23,18 @@ const routes: Routes = [
   {
     path: 'posts',
     component: PostsComponent
+  },
+  {
+    path: 'albums',
+    component: AlbumsComponent
+  },
+  {
+    path: 'TO-DOs',
+    component: TodosComponent
+  },
+  {
+    path: '',
+    redirectTo: ''
   }
 ];
 

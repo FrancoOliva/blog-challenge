@@ -6,6 +6,8 @@ import { MyprofileComponent } from './pages/myprofile/myprofile.component';
 import { HomeComponent } from './pages/home/home.component';
 import { UsersComponent } from './pages/users/users.component';
 import { PostsComponent } from './pages/posts/posts.component';
+import { AlbumsComponent } from './pages/albums/albums.component';
+import { TodosComponent } from './pages/todos/todos.component';
 
 
 @NgModule({
@@ -13,7 +15,9 @@ import { PostsComponent } from './pages/posts/posts.component';
     MyprofileComponent,
     HomeComponent,
     UsersComponent,
-    PostsComponent
+    PostsComponent,
+    AlbumsComponent,
+    TodosComponent
   ],
   imports: [
     CommonModule,
