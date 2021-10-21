@@ -6,9 +6,10 @@
                 <section>
                     <header>
                         <h2>Menú</h2>
+                        <hr>
                     </header>
                     <div>
-                        <button mat-raised-button color="accent">Crear Post</button>
+                        <button mat-raised-button color="accent" (click)="createPost()">Crear Post</button>
                     </div>
                 </section>
             </div>
@@ -23,8 +24,9 @@
                         </mat-card-header>
                         <mat-card-actions>
                             <div>
-                                <button mat-raised-button color="accent">Modificar</button>
-                                <button mat-raised-button color="accent">Eliminar</button>
+                                <button mat-raised-button color="accent" (click)="modify(post)">Modificar</button>
+                                <button mat-raised-button color="accent" (click)="deletePost(i)">Eliminar</button>
+                                <button mat-raised-button color="primary" >Detalles</button>
                             </div>
                         </mat-card-actions>
                     </mat-card>

@@ -34,7 +34,7 @@ const routes: Routes = [
     component: TodosComponent
   },
   {
-    path: 'posts/:id',
+    path: 'mis-posts/:id',
     component: UserPostsComponent
   },
   {

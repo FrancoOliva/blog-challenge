@@ -26,8 +26,24 @@ export class UserPostsComponent implements OnInit {
 
       this.posts = userPosts;
       this.mostrar = true;
-      console.log(this.posts);
+      
     });
+  }
+
+  deletePost(i: number){
+    
+    this.jsonService.deletePost(this.posts[i].id).subscribe( d => {
+      this.posts.splice(i,1);
+    });
+
+  }
+
+  modify(post: Posts){
+    console.log(post);
+  }
+
+  createPost(){
+    console.log('crear post');
   }
 
 }

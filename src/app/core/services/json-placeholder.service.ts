@@ -14,15 +14,17 @@ export class JsonPlaceholderService {
 
   constructor( private http: HttpClient ) { }
 
-
+  // USER
   getUser():Observable<User>{
     return this.http.get<User>('https://jsonplaceholder.typicode.com/users/1');
   }
-
+  
   getUserPosts(id: number):Observable<Posts[]>{
     return this.http.get<Posts[]>(`https://jsonplaceholder.typicode.com/users/${ id }/posts`);
   }
 
+
+  // USERS - POSTS - ALBUMS
   getAllUsers():Observable<User[]>{
     return this.http.get<User[]>('https://jsonplaceholder.typicode.com/users');
   }
@@ -37,6 +39,11 @@ export class JsonPlaceholderService {
 
   getAllToDos():Observable<Todos[]>{
     return this.http.get<Todos[]>('https://jsonplaceholder.typicode.com/todos');
+  }
+
+  // DELETE - CREATE - PATCH - UPDATE
+  deletePost(idPost: number){
+    return this.http.delete(`https://jsonplaceholder.typicode.com/posts/${ idPost }`);
   }
 
 

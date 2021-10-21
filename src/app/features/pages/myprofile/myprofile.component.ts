@@ -33,7 +33,7 @@ export class MyprofileComponent implements OnInit {
     console.log('mostrar todos los posts');
     console.log(userID);
 
-    this.router.navigate(['/home/posts/', userID]);
+    this.router.navigate(['/home/mis-posts/', userID]);
   }
 
   albums(userID: number){
