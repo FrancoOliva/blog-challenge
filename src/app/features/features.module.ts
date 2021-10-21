@@ -10,6 +10,7 @@ import { AlbumsComponent } from './pages/albums/albums.component';
 import { TodosComponent } from './pages/todos/todos.component';
 import { SharedModule } from '../shared/shared.module';
 import { UserPostsComponent } from './pages/user-posts/user-posts.component';
+import { DetailsComponent } from './pages/details/details.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { UserPostsComponent } from './pages/user-posts/user-posts.component';
     PostsComponent,
     AlbumsComponent,
     TodosComponent,
-    UserPostsComponent
+    UserPostsComponent,
+    DetailsComponent
   ],
   imports: [
     CommonModule,

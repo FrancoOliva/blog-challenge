@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Posts } from 'src/app/core/interfaces/posts.interface';
 import { JsonPlaceholderService } from '../../../core/services/json-placeholder.service';
 import { switchMap } from 'rxjs/operators';
@@ -14,7 +14,7 @@ export class UserPostsComponent implements OnInit {
   posts: Posts[] = [];
   mostrar: boolean = false;
 
-  constructor( private activatedRoute: ActivatedRoute, private jsonService: JsonPlaceholderService ) { }
+  constructor( private activatedRoute: ActivatedRoute, private jsonService: JsonPlaceholderService, private router: Router ) { }
 
   ngOnInit(): void {
 
@@ -44,6 +44,11 @@ export class UserPostsComponent implements OnInit {
 
   createPost(){
     console.log('crear post');
+  }
+
+  details(post: Posts){
+    
+    this.router.navigate(['home/detalles/post/', post.id]);
   }
 
 }

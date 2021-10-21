@@ -7,6 +7,7 @@ import { UsersComponent } from './pages/users/users.component';
 import { AlbumsComponent } from './pages/albums/albums.component';
 import { TodosComponent } from './pages/todos/todos.component';
 import { UserPostsComponent } from './pages/user-posts/user-posts.component';
+import { DetailsComponent } from './pages/details/details.component';
 
 const routes: Routes = [
   {
@@ -38,7 +39,11 @@ const routes: Routes = [
     component: UserPostsComponent
   },
   {
-    path: '',
+    path: 'detalles/post/:id',
+    component: DetailsComponent
+  },
+  {
+    path: '**',
     redirectTo: ''
   }
 ];

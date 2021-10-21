@@ -30,9 +30,7 @@ export class MyprofileComponent implements OnInit {
   }
 
   posts(userID: number){
-    console.log('mostrar todos los posts');
-    console.log(userID);
-
+    
     this.router.navigate(['/home/mis-posts/', userID]);
   }
 
