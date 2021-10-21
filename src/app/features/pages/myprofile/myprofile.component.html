@@ -2,56 +2,34 @@
 <section id="content" *ngIf="mostrar">
     <div class="container">
         <div class="row">
-            <div class="col-3 col-12-medium">
+            <div class="col-12 col-12-medium">                
 
-                <!-- Left Sidebar -->
-                    <section>
-                        <header>
-                            <h2>Menú</h2>
-                        </header>
-                        <ul class="link-list">
-                            <li><a (click)=posts()>Ver todos mis posteos</a></li>
-                            <li><a (click)=albums()>Ver todos mis álbumes</a></li>
-                            <li><a (click)=todos()>Ver mis TO DO's</a></li>
-                        </ul>
-                    </section>
+                <section class="card">
+                    <header>
+                        <h2 class="text-center"> {{ user.name }} </h2>
+                    </header>
+                    <div class="center">
+                        <img src="https://avatars.dicebear.com/api/gridy/{{user.name}}.svg" alt="avatar image" style="max-height: 250px;"/>
+                    </div>
+                    <div class="text-center">
+                        <p>
+                            Empresa: {{ user.company.name }}<br>
+                            Web: {{ user.website }}<br>
+                            {{ user.company.catchPhrase}}<br>
+                            {{ user.company.bs }}
+                        </p>
+                    </div>
+                    <div class="center">
+                        <button mat-raised-button color="accent" (click)=posts()>Posts</button>
+                        <button mat-raised-button color="accent" (click)=albums()>Albums</button>
+                        <button mat-raised-button color="accent" (click)=todos()>TO DOs</button>
+                    </div> 
+                </section>
+
+                
             </div>
 
-            <div class="col-9 col-12-medium imp-medium">
-
-                <!-- Main Content -->
-                <section>
-                    <header>
-                        <h2> {{ user.name }} </h2>
-                    </header>
-                    <img src="https://avatars.dicebear.com/api/gridy/{{user.name}}.svg" alt="avatar image" style="max-height: 250px;"/>
-                </section>
-
-                <section>
-                    <header>
-                        <h2>Sitio Wep</h2>
-                    </header>
-                    <ul class="link-list">
-                        <li><a href="#"> {{ user.website }} </a></li>
-                    </ul>
-                </section>
-
-                <section>
-                    <header>
-                        <h2>Empresa</h2>
-                    </header>
-                    <p>
-                        {{ user.company.name }}
-                    </p>
-                    <p>
-                        {{ user.company.catchPhrase}}
-                    </p>
-                    <p>
-                        {{ user.company.bs }}
-                    </p>
-                </section>
-
-            </div>
+            
             
             
         </div>

@@ -1,3 +1,22 @@
 a {
     cursor: pointer;
 }
+
+
+.card {
+    background-color: #8d9ca3;
+    max-width: 400px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+button {
+    margin: 2px;
+}
