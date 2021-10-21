@@ -3,11 +3,6 @@ a {
 }
 
 
-.card {
-    background-color: #8d9ca3;
-    max-width: 400px;
-}
-
 .center {
     display: flex;
     justify-content: center;

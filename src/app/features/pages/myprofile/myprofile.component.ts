@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from 'src/app/core/interfaces/user.interface';
 import { JsonPlaceholderService } from '../../../core/services/json-placeholder.service';
 
@@ -13,7 +14,7 @@ export class MyprofileComponent implements OnInit {
   user!: User;
   mostrar: boolean = false;
 
-  constructor(private jsonService: JsonPlaceholderService) { }
+  constructor(private jsonService: JsonPlaceholderService, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -28,16 +29,21 @@ export class MyprofileComponent implements OnInit {
 
   }
 
-  posts(){
+  posts(userID: number){
     console.log('mostrar todos los posts');
+    console.log(userID);
+
+    this.router.navigate(['/home/posts/', userID]);
   }
 
-  albums(){
+  albums(userID: number){
     console.log('mostrar todos los albums');
+    console.log(userID);
   }
 
-  todos(){
+  todos(userID: number){
     console.log('mostrar todos los to dos');
+    console.log(userID);
   }
 
 }

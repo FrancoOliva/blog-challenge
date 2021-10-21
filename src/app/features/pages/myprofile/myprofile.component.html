@@ -4,27 +4,29 @@
         <div class="row">
             <div class="col-12 col-12-medium">                
 
-                <section class="card">
-                    <header>
-                        <h2 class="text-center"> {{ user.name }} </h2>
-                    </header>
-                    <div class="center">
-                        <img src="https://avatars.dicebear.com/api/gridy/{{user.name}}.svg" alt="avatar image" style="max-height: 250px;"/>
-                    </div>
-                    <div class="text-center">
-                        <p>
-                            Empresa: {{ user.company.name }}<br>
-                            Web: {{ user.website }}<br>
-                            {{ user.company.catchPhrase}}<br>
-                            {{ user.company.bs }}
-                        </p>
-                    </div>
-                    <div class="center">
-                        <button mat-raised-button color="accent" (click)=posts()>Posts</button>
-                        <button mat-raised-button color="accent" (click)=albums()>Albums</button>
-                        <button mat-raised-button color="accent" (click)=todos()>TO DOs</button>
-                    </div> 
-                </section>
+               <div class="center">
+                    <section class="card">
+                        <header>
+                            <h2 class="text-center"> {{ user.name }} </h2>
+                        </header>
+                        <div class="center">
+                            <img src="https://avatars.dicebear.com/api/gridy/{{user.name}}.svg" alt="avatar image" style="max-height: 250px;"/>
+                        </div>
+                        <div class="text-center">
+                            <p>
+                                Empresa: {{ user.company.name }}<br>
+                                Web: {{ user.website }}<br>
+                                {{ user.company.catchPhrase}}<br>
+                                {{ user.company.bs }}
+                            </p>
+                        </div>
+                        <div class="center">
+                            <button mat-raised-button color="accent" (click)=posts(user.id)>Posts</button>
+                            <button mat-raised-button color="accent" (click)=albums(user.id)>Albums</button>
+                            <button mat-raised-button color="accent" (click)=todos(user.id)>TO DOs</button>
+                        </div> 
+                    </section>
+               </div>
 
                 
             </div>

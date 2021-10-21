@@ -19,6 +19,10 @@ export class JsonPlaceholderService {
     return this.http.get<User>('https://jsonplaceholder.typicode.com/users/1');
   }
 
+  getUserPosts(id: number):Observable<Posts[]>{
+    return this.http.get<Posts[]>(`https://jsonplaceholder.typicode.com/users/${ id }/posts`);
+  }
+
   getAllUsers():Observable<User[]>{
     return this.http.get<User[]>('https://jsonplaceholder.typicode.com/users');
   }

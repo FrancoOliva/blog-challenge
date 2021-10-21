@@ -6,6 +6,7 @@ import { PostsComponent } from './pages/posts/posts.component';
 import { UsersComponent } from './pages/users/users.component';
 import { AlbumsComponent } from './pages/albums/albums.component';
 import { TodosComponent } from './pages/todos/todos.component';
+import { UserPostsComponent } from './pages/user-posts/user-posts.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'TO-DOs',
     component: TodosComponent
+  },
+  {
+    path: 'posts/:id',
+    component: UserPostsComponent
   },
   {
     path: '',
