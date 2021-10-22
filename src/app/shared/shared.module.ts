@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 // Angular Material
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatInputModule} from '@angular/material/input';
 
 
 
@@ -14,7 +16,9 @@ import {MatButtonModule} from '@angular/material/button';
   ],
   exports: [
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule,
+    MatInputModule
   ]
 })
 export class SharedModule { }

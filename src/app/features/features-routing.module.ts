@@ -8,6 +8,8 @@ import { AlbumsComponent } from './pages/albums/albums.component';
 import { TodosComponent } from './pages/todos/todos.component';
 import { UserPostsComponent } from './pages/user-posts/user-posts.component';
 import { DetailsComponent } from './pages/details/details.component';
+import { CreatePostComponent } from './pages/create-post/create-post.component';
+import { UpdatePostComponent } from './pages/update-post/update-post.component';
 
 const routes: Routes = [
   {
@@ -41,6 +43,14 @@ const routes: Routes = [
   {
     path: 'detalles/post/:id',
     component: DetailsComponent
+  },
+  {
+    path: 'crear-post',
+    component: CreatePostComponent
+  },
+  {
+    path: 'modificar/:id',
+    component: UpdatePostComponent
   },
   {
     path: '**',

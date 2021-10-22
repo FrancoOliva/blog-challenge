@@ -11,6 +11,11 @@ import { TodosComponent } from './pages/todos/todos.component';
 import { SharedModule } from '../shared/shared.module';
 import { UserPostsComponent } from './pages/user-posts/user-posts.component';
 import { DetailsComponent } from './pages/details/details.component';
+import { CreatePostComponent } from './pages/create-post/create-post.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { UpdatePostComponent } from './pages/update-post/update-post.component';
+
+
 
 
 @NgModule({
@@ -22,12 +27,15 @@ import { DetailsComponent } from './pages/details/details.component';
     AlbumsComponent,
     TodosComponent,
     UserPostsComponent,
-    DetailsComponent
+    DetailsComponent,
+    CreatePostComponent,
+    UpdatePostComponent
   ],
   imports: [
     CommonModule,
     FeaturesRoutingModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ]
 })
 export class FeaturesModule { }
