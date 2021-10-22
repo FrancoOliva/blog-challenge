@@ -1,40 +1,31 @@
 <!-- Content -->
-<section id="content">
-    <div class="container">
+<section id="content" *ngIf="mostrar">
+    <div class="container" >
         <mat-card>
             <mat-card-title>
-                Título post
-                <hr>
+                {{ post.title }}
+            <hr>
             </mat-card-title>
             
             <!-- <mat-card-subtitle>User ID</mat-card-subtitle> -->
             <mat-card-content>
                 <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                    Consectetur exercitationem sequi consequatur soluta optio et similique, 
-                    neque repellendus perferendis architecto fugit, quod quis maiores iusto ut, distinctio magni? Est, fuga.
+                    {{post.body}}
                 </p>
                 <hr>
-                <div class="comments">
-                    <h2>Nombre</h2>
-                    <p>Email</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Architecto praesentium quae esse placeat perspiciatis voluptates facere, corrupti cumque. 
-                        Ad laudantium tempora saepe, qui earum praesentium maxime corrupti nesciunt nemo minima!
-                    </p>
-                </div>
-                <div class="comments">
-                    <h2>Nombre</h2>
-                    <p>Email</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Architecto praesentium quae esse placeat perspiciatis voluptates facere, corrupti cumque. 
-                        Ad laudantium tempora saepe, qui earum praesentium maxime corrupti nesciunt nemo minima!
-                    </p>
+                <div *ngIf="mostrar2">
+                    <div class="comments" *ngFor="let c of comments; let i = index;">
+                        <h2> {{comments[i].name}} </h2>
+                        <p> {{comments[i].email}} </p>
+                        <p>
+                            {{comments[i].body}}
+                        </p>
+                    </div>
                 </div>
             </mat-card-content>
             
             <mat-card-actions>
-                <button mat-raised-button color="accent" > Ver comentarios </button>         
+                <button mat-raised-button color="accent" (click)="openComents()"> {{ text }} </button>         
             </mat-card-actions>
         </mat-card>
     </div>

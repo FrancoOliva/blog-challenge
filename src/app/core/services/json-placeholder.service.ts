@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Albums } from '../interfaces/albums.interface';
+import { Comments } from '../interfaces/comments.interface';
 import { Posts } from '../interfaces/posts.interface';
 import { Todos } from '../interfaces/todos.interface';
 import { User } from '../interfaces/user.interface';
@@ -23,7 +24,6 @@ export class JsonPlaceholderService {
     return this.http.get<Posts[]>(`https://jsonplaceholder.typicode.com/users/${ id }/posts`);
   }
 
-
   // USERS - POSTS - ALBUMS
   getAllUsers():Observable<User[]>{
     return this.http.get<User[]>('https://jsonplaceholder.typicode.com/users');
@@ -31,6 +31,10 @@ export class JsonPlaceholderService {
 
   getAllposts():Observable<Posts[]>{
     return this.http.get<Posts[]>('https://jsonplaceholder.typicode.com/posts');
+  }
+
+  getPostById(idPost: number):Observable<Posts>{
+    return this.http.get<Posts>(`https://jsonplaceholder.typicode.com/posts/${ idPost }`);
   }
 
   getAllAlbums():Observable<Albums[]>{
@@ -44,6 +48,11 @@ export class JsonPlaceholderService {
   // DELETE - CREATE - PATCH - UPDATE
   deletePost(idPost: number){
     return this.http.delete(`https://jsonplaceholder.typicode.com/posts/${ idPost }`);
+  }
+
+  // Comments
+  getComments(idPost: number):Observable<Comments[]>{
+    return this.http.get<Comments[]>(`https://jsonplaceholder.typicode.com/posts/${ idPost }/comments`);
   }
 
 
