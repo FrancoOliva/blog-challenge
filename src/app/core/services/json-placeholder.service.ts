@@ -22,8 +22,12 @@ export class JsonPlaceholderService {
 
   
   // USER
-  getDataById<T>( args1: T, args2: T):Observable<T>{
+  getDataById<T>( args1: string, args2: number):Observable<T>{
     return this.http.get<T>(`${ this.url }/${ args1 }/${ args2 }`);
+  }
+
+  getData<T>( args1: string, args2: number , args3: string):Observable<T>{
+    return this.http.get<T>(`${ this.url }/${ args1 }/${ args2 }/${ args3 }`);
   }
   
   getUserPosts(id: number):Observable<Posts[]>{

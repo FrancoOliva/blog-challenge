@@ -7,23 +7,32 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
 import { UserscardsComponent } from './userscards/userscards.component';
+import { CardsComponent } from './cards/cards.component';
 
 
 
 
 @NgModule({
   declarations: [
-    UserscardsComponent
+    UserscardsComponent,
+    CardsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatCardModule,
+    MatButtonModule,
+    MatDialogModule,
+    MatInputModule
+
   ],
   exports: [
     MatCardModule,
     MatButtonModule,
     MatDialogModule,
     MatInputModule,
-    UserscardsComponent
+    UserscardsComponent,
+    CardsComponent
+    
   ]
 })
 export class SharedModule { }

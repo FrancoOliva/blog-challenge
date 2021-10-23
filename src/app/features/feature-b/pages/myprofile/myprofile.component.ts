@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Posts } from 'src/app/core/interfaces/posts.interface';
 import { User } from 'src/app/core/interfaces/user.interface';
+import { JsonPlaceholderService } from '../../../../core/services/json-placeholder.service';
 
 @Component({
   selector: 'app-myprofile',
@@ -10,8 +12,11 @@ export class MyprofileComponent implements OnInit {
 
   user!: User;
   info: boolean = false;
+  infoPosts: boolean = false;
 
-  constructor() {
+  posts: Posts[] = [];
+
+  constructor( private jsonService: JsonPlaceholderService) {
 
     if( localStorage.getItem('userON') ){
 
@@ -22,9 +27,28 @@ export class MyprofileComponent implements OnInit {
 
    }
 
-  ngOnInit(): void {   
+  ngOnInit(): void {
 
+    if( this.user ){
+
+      this.jsonService.getData<Posts[]>('users', this.user.id, 'posts').subscribe( p => {
+
+        this.posts = p;
+        
+      });
+
+      console.log(this.posts);
+      
+    }
     
+  }
+
+  myPosts(){
+
+    this.info = false;
+
+    this.infoPosts = true;
+
   }
 
 }

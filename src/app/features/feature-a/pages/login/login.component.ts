@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    this.jsonService.getDataById('users','1').subscribe( user => {
+    this.jsonService.getDataById('users', 1).subscribe( user => {
 
       localStorage.setItem('userON', JSON.stringify( user ) );
       this.router.navigate(['blog-challenge/mi-perfil']);
