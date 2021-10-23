@@ -13,6 +13,7 @@ export class MyprofileComponent implements OnInit {
   user!: User;
   info: boolean = false;
   infoPosts: boolean = false;
+  back: boolean = false;
 
   posts: Posts[] = [];
 
@@ -46,9 +47,15 @@ export class MyprofileComponent implements OnInit {
   myPosts(){
 
     this.info = false;
-
     this.infoPosts = true;
+    this.back = true;
 
+  }
+
+  menuBack(){
+    this.info = true;
+    this.infoPosts = false;
+    this.back = false;
   }
 
 }
