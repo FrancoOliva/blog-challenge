@@ -1,12 +1,14 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Albums } from '../interfaces/albums.interface';
+
 import { Comments } from '../interfaces/comments.interface';
 import { Posts } from '../interfaces/posts.interface';
 import { Todos } from '../interfaces/todos.interface';
-import { User } from '../interfaces/user.interface';
+
 import { FormGroup } from '@angular/forms';
+import { User } from '../interfaces/user.interface';
+
 
 
 @Injectable({
@@ -14,37 +16,31 @@ import { FormGroup } from '@angular/forms';
 })
 export class JsonPlaceholderService {
 
+  url: string = 'https://jsonplaceholder.typicode.com/';
+
   constructor( private http: HttpClient ) { }
 
   // USER
   getUser():Observable<User>{
-    return this.http.get<User>('https://jsonplaceholder.typicode.com/users/1');
+    return this.http.get<User>(`${ this.url }users/1`);
   }
   
   getUserPosts(id: number):Observable<Posts[]>{
-    return this.http.get<Posts[]>(`https://jsonplaceholder.typicode.com/users/${ id }/posts`);
+    return this.http.get<Posts[]>(`${this.url}users/${ id }/posts`);
   }
-
-  // USERS - POSTS - ALBUMS
-  getAllUsers():Observable<User[]>{
-    return this.http.get<User[]>('https://jsonplaceholder.typicode.com/users');
-  }
-
-  getAllposts():Observable<Posts[]>{
-    return this.http.get<Posts[]>('https://jsonplaceholder.typicode.com/posts');
-  }
-
+  
   getPostById(idPost: number):Observable<Posts>{
-    return this.http.get<Posts>(`https://jsonplaceholder.typicode.com/posts/${ idPost }`);
+    return this.http.get<Posts>(`${ this.url }posts/${ idPost }`);
   }
 
-  getAllAlbums():Observable<Albums[]>{
-    return this.http.get<Albums[]>('https://jsonplaceholder.typicode.com/albums');
-  }
+  // Get all (users , posts, albums or TO DOs)
+  getAll<T>( args: string ):Observable<T>{
 
-  getAllToDos():Observable<Todos[]>{
-    return this.http.get<Todos[]>('https://jsonplaceholder.typicode.com/todos');
-  }
+    return this.http.get<T>(`${ this.url }${ args }`);
+
+  } 
+
+
 
   // DELETE - CREATE - PATCH - UPDATE
   deletePost(idPost: number){
@@ -67,5 +63,6 @@ export class JsonPlaceholderService {
     return this.http.get<Comments[]>(`https://jsonplaceholder.typicode.com/posts/${ idPost }/comments`);
   }
 
+  
 
 }

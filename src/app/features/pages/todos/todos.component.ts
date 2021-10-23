@@ -16,10 +16,10 @@ export class TodosComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.jsonService.getAllToDos().subscribe( todos => {
-      this.todos = todos;
-      this.mostrar = true;
-    });
+    // this.jsonService.getAllToDos().subscribe( todos => {
+    //   this.todos = todos;
+    //   this.mostrar = true;
+    // });
   }
 
 }

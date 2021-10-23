@@ -16,10 +16,10 @@ export class PostsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.jsonService.getAllposts().subscribe( posts => {
-      this.posts = posts;
-      this.mostrar = true;
-    });
+    // this.jsonService.getAllposts().subscribe( posts => {
+    //   this.posts = posts;
+    //   this.mostrar = true;
+    // });
   }
 
 }

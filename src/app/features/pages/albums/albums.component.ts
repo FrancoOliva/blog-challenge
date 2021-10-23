@@ -16,10 +16,10 @@ export class AlbumsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.jsonService.getAllAlbums().subscribe( albums => {
-      this.albums = albums;
-      this.mostrar = true;
-    });
+    // this.jsonService.getAllAlbums().subscribe( albums => {
+    //   this.albums = albums;
+    //   this.mostrar = true;
+    // });
   }
 
 }
