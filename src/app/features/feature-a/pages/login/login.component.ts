@@ -1,6 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { JsonPlaceholderService } from '../../../../core/services/json-placeholder.service';
 
 
 @Component({
@@ -10,13 +11,18 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router: Router ) { }
+  constructor(private router: Router, private jsonService: JsonPlaceholderService ) { }
 
   ngOnInit(): void {
   }
 
   login(){
-    this.router.navigate(['./blog-challenge']);
+    this.jsonService.getDataById('users','1').subscribe( user => {
+
+      localStorage.setItem('userON', JSON.stringify( user ) );
+      this.router.navigate(['blog-challenge/mi-perfil']);
+
+    });
   }
 
 }

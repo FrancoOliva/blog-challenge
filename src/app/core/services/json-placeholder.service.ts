@@ -16,13 +16,14 @@ import { User } from '../interfaces/user.interface';
 })
 export class JsonPlaceholderService {
 
-  url: string = 'https://jsonplaceholder.typicode.com/';
+  url: string = 'https://jsonplaceholder.typicode.com';
 
   constructor( private http: HttpClient ) { }
 
+  
   // USER
-  getUser():Observable<User>{
-    return this.http.get<User>(`${ this.url }users/1`);
+  getDataById<T>( args1: T, args2: T):Observable<T>{
+    return this.http.get<T>(`${ this.url }/${ args1 }/${ args2 }`);
   }
   
   getUserPosts(id: number):Observable<Posts[]>{
@@ -36,7 +37,7 @@ export class JsonPlaceholderService {
   // Get all (users , posts, albums or TO DOs)
   getAll<T>( args: string ):Observable<T>{
 
-    return this.http.get<T>(`${ this.url }${ args }`);
+    return this.http.get<T>(`${ this.url }/${ args }`);
 
   } 
 

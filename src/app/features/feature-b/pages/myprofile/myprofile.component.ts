@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/core/interfaces/user.interface';
 
 @Component({
   selector: 'app-myprofile',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyprofileComponent implements OnInit {
 
-  constructor() { }
+  user!: User;
+  info: boolean = false;
 
-  ngOnInit(): void {
+  constructor() {
+
+    if( localStorage.getItem('userON') ){
+
+      this.user = JSON.parse( localStorage.getItem('userON')! );
+      this.info = true;
+      
+    }
+
+   }
+
+  ngOnInit(): void {   
+
+    
   }
 
 }

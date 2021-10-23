@@ -6,11 +6,15 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
+import { UserscardsComponent } from './userscards/userscards.component';
+
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    UserscardsComponent
+  ],
   imports: [
     CommonModule
   ],
@@ -18,7 +22,8 @@ import {MatInputModule} from '@angular/material/input';
     MatCardModule,
     MatButtonModule,
     MatDialogModule,
-    MatInputModule
+    MatInputModule,
+    UserscardsComponent
   ]
 })
 export class SharedModule { }
