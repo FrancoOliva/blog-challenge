@@ -1,14 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./features/features.module').then( m => m.FeaturesModule)
+    path: 'auth',
+    loadChildren: () => import('./features/feature-a/feature-a.module').then( m => m.FeatureAModule)
+  },
+  {
+    path: 'blog-challenge',
+    loadChildren: () => import('./features/feature-b/feature-b.module').then( m => m.FeatureBModule)
   },
   {
     path: '**',
-    redirectTo: 'home'
+    redirectTo: 'auth'
   }
 ];
 
