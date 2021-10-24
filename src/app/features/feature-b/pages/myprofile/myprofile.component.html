@@ -13,14 +13,14 @@
                     </header>
                     <ul class="link-list">
                         <li><a (click)="myPosts()">Ver mis posts</a></li>
-                        <li><a href="#">Ver mis albums</a></li>
-                        <li><a href="#">Ver mis TO DOs</a></li>
+                        <li><a (click)="myAlbums()">Ver mis albums</a></li>
+                        <li><a (click)="myTodos()">Ver mis TO DOs</a></li>
                         <li *ngIf="back"><a (click)="menuBack()">Volver</a></li>
                     </ul>
                 </section>
             </div>
 
-            <div class="col-10 col-12-medium" *ngIf="info">
+            <div class="col-10 col-12-medium" *ngIf="infoUser">
 
                 <!-- Main content -->
                 <div class="space">
@@ -35,10 +35,31 @@
                 <div class="wrap">
                     <!-- Main content -->
                 <div *ngFor="let post of posts">
-                    <app-cards [posts]="post"></app-cards>
+                    <app-cards [post]="post" [isPost]="infoPosts"></app-cards>
                 </div>
                 </div>
+            
+            </div>
 
+            <div class="col-10 col-12-medium" *ngIf="infoAlbums">
+
+                <div class="wrap">
+                    <!-- Main content -->
+                <div *ngFor="let album of albums">
+                    <app-cards [album]="album" [isAlbum]="infoAlbums"></app-cards>
+                </div>
+                </div>
+            
+            </div>
+
+            <div class="col-10 col-12-medium" *ngIf="infoTodos">
+
+                <div class="wrap">
+                    <!-- Main content -->
+                <div *ngFor="let todo of todos">
+                    <app-cards [todos]="todo" [isTodos]="infoTodos"></app-cards>
+                </div>
+                </div>
             
             </div>
     

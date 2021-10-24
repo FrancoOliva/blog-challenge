@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Posts } from 'src/app/core/interfaces/posts.interface';
 import { User } from 'src/app/core/interfaces/user.interface';
 import { JsonPlaceholderService } from '../../../../core/services/json-placeholder.service';
+import { Albums } from '../../../../core/interfaces/albums.interface';
+import { Todos } from '../../../../core/interfaces/todos.interface';
 
 @Component({
   selector: 'app-myprofile',
@@ -11,18 +13,24 @@ import { JsonPlaceholderService } from '../../../../core/services/json-placehold
 export class MyprofileComponent implements OnInit {
 
   user!: User;
-  info: boolean = false;
+  posts: Posts[] = [];
+  albums: Albums[] = [];
+  todos: Todos[] = [];
+
+  infoUser: boolean = false;
   infoPosts: boolean = false;
+  infoAlbums: boolean = false;
+  infoTodos: boolean = false;
+
   back: boolean = false;
 
-  posts: Posts[] = [];
 
   constructor( private jsonService: JsonPlaceholderService) {
 
     if( localStorage.getItem('userON') ){
 
       this.user = JSON.parse( localStorage.getItem('userON')! );
-      this.info = true;
+      this.infoUser = true;
       
     }
 
@@ -38,7 +46,13 @@ export class MyprofileComponent implements OnInit {
         
       });
 
-      console.log(this.posts);
+      this.jsonService.getData<Albums[]>('users', this.user.id, 'albums').subscribe( a => {
+        this.albums = a;
+      });
+
+      this.jsonService.getData<Todos[]>('users', this.user.id, 'todos').subscribe( td => {
+        this.todos = td;
+      })
       
     }
     
@@ -46,15 +60,48 @@ export class MyprofileComponent implements OnInit {
 
   myPosts(){
 
-    this.info = false;
     this.infoPosts = true;
+    
+    this.infoUser = false;
+    this.infoAlbums = false;
+    this.infoTodos  = false;
+
+    this.back = true;
+
+  }
+
+  myAlbums(){
+    
+    this.infoAlbums = true;
+    
+
+    this.infoUser   = false;
+    this.infoPosts  = false;
+    this.infoTodos  = false;
+
+    this.back = true;
+
+  }
+
+  myTodos(){
+
+    this.infoTodos  = true;
+    this.infoTodos = true;
+
+    this.infoUser   = false;
+    this.infoPosts  = false;
+    this.infoAlbums = false;
+
     this.back = true;
 
   }
 
   menuBack(){
-    this.info = true;
-    this.infoPosts = false;
+    this.infoUser   = true;
+    this.infoPosts  = false;
+    this.infoAlbums = false;
+    this.infoTodos  = false;
+
     this.back = false;
   }
 

@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Posts } from 'src/app/core/interfaces/posts.interface';
+import { Todos } from 'src/app/core/interfaces/todos.interface';
+import { Albums } from '../../core/interfaces/albums.interface';
 
 @Component({
   selector: 'app-cards',
@@ -8,7 +10,13 @@ import { Posts } from 'src/app/core/interfaces/posts.interface';
 })
 export class CardsComponent implements OnInit {
 
-  @Input() posts!: Posts;
+  @Input() post!: Posts;
+  @Input() album!: Albums;
+  @Input() todos!: Todos;
+
+  @Input() isPost!: boolean;
+  @Input() isAlbum!: boolean;
+  @Input() isTodos!: boolean;
 
   message: string = 'No se encontraron posteos.';
 
@@ -19,7 +27,7 @@ export class CardsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    console.log(this.posts);
+    
   }
 
 }
