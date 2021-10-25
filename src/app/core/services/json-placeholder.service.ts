@@ -41,7 +41,7 @@ export class JsonPlaceholderService {
   
 
 
-  // ********************* -> Generizar código si es necesario <- *********************
+  // ********************* -> Generalizar código si es necesario <- *********************
   // DELETE - CREATE - PATCH - UPDATE 
   deletePost(idPost: number){
     return this.http.delete(`https://jsonplaceholder.typicode.com/posts/${ idPost }`);
