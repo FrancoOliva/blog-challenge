@@ -13,8 +13,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup = this.fb.group({
-    email: ['', Validators.required ],
-    password: ['', Validators.required ]
+    email: ['leanne@email.com', Validators.required ],
+    password: ['123456789', Validators.required ]
   });
 
   message1: string = '';
@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
 
     } else {
       
-      if( this.loginForm.controls['email'].value == 'franco@email.com' ){
+      if( this.loginForm.controls['email'].value == 'leanne@email.com' ){
 
         if( this.loginForm.controls['password'].value == '123456789' ){
 

@@ -7,3 +7,7 @@
 .m {
     margin: 10px;
 }
+
+app-userscards {
+    cursor: pointer;
+}
