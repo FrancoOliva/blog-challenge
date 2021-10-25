@@ -4,16 +4,16 @@
             <div class="col-12">
 
                 <!-- Logo -->
-                    <h1><a routerLink="home" id="logo">Blog Challenge</a></h1>
+                    <h1><a routerLink="blog-challenge/mi-perfil" id="logo">Blog Challenge</a></h1>
 
                 <!-- Nav -->
                     <nav id="nav">
-                        <a routerLink="home">Login</a>
                         <a routerLink="mi-perfil">Mi Perfil</a>
                         <a routerLink="usuarios">Usuarios</a>
                         <a routerLink="posts">Posteos</a>
                         <a routerLink="albums">Álbumes</a>
                         <a routerLink="to-dos">TO-DOs</a>
+                        <a (click)="logOut()">Desconectar</a>
                     </nav>
 
             </div>

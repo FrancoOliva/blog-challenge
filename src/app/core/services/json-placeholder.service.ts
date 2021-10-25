@@ -8,6 +8,7 @@ import { Todos } from '../interfaces/todos.interface';
 
 import { FormGroup } from '@angular/forms';
 import { User } from '../interfaces/user.interface';
+import { Router } from '@angular/router';
 
 
 
@@ -18,7 +19,7 @@ export class JsonPlaceholderService {
 
   url: string = 'https://jsonplaceholder.typicode.com';
 
-  constructor( private http: HttpClient ) { }
+  constructor( private http: HttpClient, private router: Router ) { }
 
   isON():Observable<boolean>{
 
@@ -28,6 +29,13 @@ export class JsonPlaceholderService {
       return of(false);
     }
     
+  }
+
+  logOut(){
+
+    localStorage.removeItem('userON');
+    this.router.navigate(['auth/login']);
+
   }
 
   
