@@ -19,8 +19,10 @@ export class TodosComponent implements OnInit {
     this.jsonService.getAll<Todos[]>('todos').subscribe( td => {
 
       this.todos = td;
-      
+
     });
+
+    
   }
 
 }

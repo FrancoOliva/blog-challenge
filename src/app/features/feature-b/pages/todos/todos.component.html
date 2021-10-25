@@ -1,16 +1,21 @@
 <section id="content">
     <div class="container">
         <div class="row">
-            <div class="col-2 col-12-medium">
-                Buscador
-            </div>
-            <div class="col-10 col-12-medium">
+            <!-- CONTINUAR -->
+            <!-- <div class="col-12 col-12-medium">
+
+                    <div class="center">
+                        <app-search-input></app-search-input>
+                    </div>              
+                    
+                
+            </div> -->
+            <div class="col-12 col-12-medium">
                 
                 <div class="wrap">
                     <div *ngFor="let td of todos">
                         <app-cards [todos]="td" [isTodos]="infoTodos"></app-cards>
-                    </div>
-                    
+                    </div>                    
                 </div>
 
             </div>

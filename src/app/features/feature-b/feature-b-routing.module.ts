@@ -6,6 +6,7 @@ import { MyprofileComponent } from './pages/myprofile/myprofile.component';
 import { PostsComponent } from './pages/posts/posts.component';
 import { TodosComponent } from './pages/todos/todos.component';
 import { UsersComponent } from './pages/users/users.component';
+import { UsersDetailsComponent } from './pages/users-details/users-details.component';
 
 
 
@@ -34,6 +35,10 @@ const routes: Routes = [
       {
         path: 'to-dos',
         component: TodosComponent
+      },
+      {
+        path: 'detalles-usuario/:id',
+        component: UsersDetailsComponent
       },
       {
         path: '**',

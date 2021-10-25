@@ -10,6 +10,7 @@ import { PostsComponent } from './pages/posts/posts.component';
 import { AlbumsComponent } from './pages/albums/albums.component';
 import { TodosComponent } from './pages/todos/todos.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { UsersDetailsComponent } from './pages/users-details/users-details.component';
 
 
 
@@ -20,7 +21,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
     UsersComponent,
     PostsComponent,
     AlbumsComponent,
-    TodosComponent
+    TodosComponent,
+    UsersDetailsComponent
   ],
   imports: [
     CommonModule,

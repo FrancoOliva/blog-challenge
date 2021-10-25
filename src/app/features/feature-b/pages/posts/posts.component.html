@@ -1,9 +1,16 @@
 <section id="content">
     <div class="container">
         <div class="row">
-            <div class="col-6 col-12-medium" *ngFor="let p of posts">
+            <div class="col-12 col-12-medium" >
+
+                <div class="wrap">
+                    <div *ngFor="let p of posts">
+                        <app-cards [post]="p" [isPost]="infoPost"></app-cards>
+                    </div>
+                </div>
+
                 
-                <app-cards [post]="p" [isPost]="infoPost"></app-cards>
+                
 
             </div>
         </div>

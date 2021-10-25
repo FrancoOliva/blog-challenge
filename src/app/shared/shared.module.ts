@@ -8,6 +8,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
 import { UserscardsComponent } from './userscards/userscards.component';
 import { CardsComponent } from './cards/cards.component';
+import { SearchInputComponent } from './search-input/search-input.component';
 
 
 
@@ -15,7 +16,8 @@ import { CardsComponent } from './cards/cards.component';
 @NgModule({
   declarations: [
     UserscardsComponent,
-    CardsComponent
+    CardsComponent,
+    SearchInputComponent
   ],
   imports: [
     CommonModule,
@@ -31,7 +33,8 @@ import { CardsComponent } from './cards/cards.component';
     MatDialogModule,
     MatInputModule,
     UserscardsComponent,
-    CardsComponent
+    CardsComponent,
+    SearchInputComponent
     
   ]
 })
