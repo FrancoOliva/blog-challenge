@@ -1,3 +1,23 @@
 .mt-5 {
     margin-top: 5rem;
 }
+
+mat-card {
+    width: 450px;
+    display: flex;
+    flex-direction: row;
+}
+
+.full-w {
+    width: 100%;
+}
+
+.mb {
+    margin-bottom: 1rem;
+}
+
+.txt-center {
+    text-align: center;
+    color: blue;
+    cursor: pointer;
+}

@@ -1,5 +1,43 @@
 <div class="container mt-5">
     <div class="row aln-center">
-        <button mat-raised-button color="primary" (click)=login()> Entrar </button>
+        <mat-card>
+            
+            <form
+            class="full-w"
+            [formGroup]="loginForm"
+            autocomplete="off"
+            (ngSubmit)="login()">
+
+            <div class="mb">
+                <mat-form-field appearance="fill" class="full-w">
+                    <input type="email" matInput formControlName="email" placeholder="Correo electrónico">
+                    <mat-error *ngIf="emailError">
+                        {{ message1 }}
+                    </mat-error>
+                </mat-form-field>                
+            </div>
+            <div class="mb">
+                <mat-form-field appearance="fill" class="full-w">
+                    <input type="password" matInput formControlName="password" placeholder="Contraseña">
+                    <mat-error *ngIf="passError">
+                        {{ message2 }}
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <!-- <mat-form-field appearance="fill">
+                <input type="password" matInput formControlName="password" placeholder="Contraseña">
+            </mat-form-field> -->
+
+            <button mat-raised-button color="primary" type="submit" class="full-w mb"> Entrar </button>
+
+            <div class="mb txt-center">
+                <p>
+                    Crear cuenta nueva
+                </p>
+            </div>
+
+            </form>
+            
+        </mat-card>
     </div>
 </div>
