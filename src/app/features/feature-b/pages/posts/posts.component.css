@@ -1,0 +1,9 @@
+.wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+app-cards {
+    height: 410px;
+}

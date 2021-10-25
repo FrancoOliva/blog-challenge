@@ -1,17 +1,11 @@
-<!-- Content -->
 <section id="content">
     <div class="container">
-        <!-- <div class="col-3 col-12-medium">
+        <div class="row">
+            <div class="col-6 col-12-medium" *ngFor="let p of posts">
+                
+                <app-cards [post]="p" [isPost]="infoPost"></app-cards>
 
-            <section>
-                <header> <h2>Cantidad de Posteos </h2> </header>
-            </section>
-
-        </div> -->
-        <div class="col-12 col-12-medium">
-
-            <app-cards></app-cards>
-
+            </div>
         </div>
     </div>
 </section>

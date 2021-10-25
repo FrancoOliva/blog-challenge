@@ -1,14 +1,16 @@
 <mat-card class="card">
 
+    <img mat-card-image src="assets/libros.jpg" alt="post image">
+
     <mat-card-header>
         <mat-card-title *ngIf="isPost"> {{post.title}} </mat-card-title>
         <mat-card-title *ngIf="isAlbum"> {{album.title}} </mat-card-title>
         <mat-card-title *ngIf="isTodos"> {{todos.title}} </mat-card-title>
     </mat-card-header>
 
-    <img mat-card-image src="assets/libros.jpg" alt="post image">
     
-    <mat-card-content *ngIf="isPost">
+    
+    <mat-card-content *ngIf="isPost">        
         {{post.body}}
     </mat-card-content>
 </mat-card>

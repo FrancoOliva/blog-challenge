@@ -9,6 +9,7 @@ import { User } from 'src/app/core/interfaces/user.interface';
 export class UserscardsComponent implements OnInit {
 
   @Input() user!: User;
+  @Input() userInfo!: boolean;
 
   constructor() { }
 

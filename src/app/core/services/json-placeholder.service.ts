@@ -21,14 +21,23 @@ export class JsonPlaceholderService {
   constructor( private http: HttpClient ) { }
 
   
-  // USER
+  // GET -> ex: users/1 - albums/1 - posts/1 - todos/1
   getDataById<T>( args1: string, args2: number):Observable<T>{
     return this.http.get<T>(`${ this.url }/${ args1 }/${ args2 }`);
   }
 
+
+  // GET -> ex: users/1/albums - users/1/posts
   getData<T>( args1: string, args2: number , args3: string):Observable<T>{
     return this.http.get<T>(`${ this.url }/${ args1 }/${ args2 }/${ args3 }`);
   }
+
+  // Get all data (users , posts, albums or TO DOs)
+  getAll<T>( args: string ):Observable<T>{
+
+    return this.http.get<T>(`${ this.url }/${ args }`);
+
+  } 
   
   getUserPosts(id: number):Observable<Posts[]>{
     return this.http.get<Posts[]>(`${this.url}users/${ id }/posts`);
@@ -38,12 +47,7 @@ export class JsonPlaceholderService {
     return this.http.get<Posts>(`${ this.url }posts/${ idPost }`);
   }
 
-  // Get all (users , posts, albums or TO DOs)
-  getAll<T>( args: string ):Observable<T>{
-
-    return this.http.get<T>(`${ this.url }/${ args }`);
-
-  } 
+  
 
 
 

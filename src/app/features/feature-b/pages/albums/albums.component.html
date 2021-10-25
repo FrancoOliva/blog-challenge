@@ -1,3 +1,11 @@
-<div class="container">
-    <p>albums works!</p>
-</div>
+<section id="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-6 col-12-medium" *ngFor="let a of albums">
+                
+                <app-cards [album]="a" [isAlbum]="infoAlbum" ></app-cards>    
+                
+            </div>
+        </div>
+    </div>
+</section>
