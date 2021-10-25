@@ -8,12 +8,29 @@ import { Observable } from 'rxjs';
 export class AuthGuardGuard implements CanActivate, CanLoad {
   canActivate(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return true;
+    state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+
+      if( localStorage.getItem('userON') ){
+        
+        console.log('canActivate');
+        return true;
+
+      } else {
+        return true;
+      }
   }
   canLoad(
     route: Route,
-    segments: UrlSegment[]): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return true;
+    segments: UrlSegment[]): Observable<boolean> | Promise<boolean> | boolean {
+    
+      if( localStorage.getItem('userON') ){
+        console.log('canLoad');
+        return true;
+
+      } else {
+
+        return true;
+
+      }
   }
 }

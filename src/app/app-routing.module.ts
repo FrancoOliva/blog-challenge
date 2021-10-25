@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuardGuard } from './core/guards/auth-guard.guard';
 
 
 const routes: Routes = [
@@ -9,7 +10,9 @@ const routes: Routes = [
   },
   {
     path: 'blog-challenge',
-    loadChildren: () => import('./features/feature-b/feature-b.module').then( m => m.FeatureBModule)
+    loadChildren: () => import('./features/feature-b/feature-b.module').then( m => m.FeatureBModule),
+    canActivate: [ AuthGuardGuard ],
+    canLoad: [ AuthGuardGuard ]
   },
   {
     path: '**',
