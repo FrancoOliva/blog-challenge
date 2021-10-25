@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from '../../../../core/interfaces/user.interface';
 import { JsonPlaceholderService } from '../../../../core/services/json-placeholder.service';
+
 
 @Component({
   selector: 'app-users',
@@ -11,7 +13,7 @@ export class UsersComponent implements OnInit {
 
   users: User[] = [];
 
-  constructor( private jsonService: JsonPlaceholderService ) { }
+  constructor( private jsonService: JsonPlaceholderService, private router: Router ) { }
 
   ngOnInit(): void {
 
@@ -20,4 +22,7 @@ export class UsersComponent implements OnInit {
     });
   }
 
+  details(id:number){
+    this.router.navigate(['blog-challenge/detalles-usuario', id]);
+  }
 }

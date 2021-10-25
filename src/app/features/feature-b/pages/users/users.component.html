@@ -4,7 +4,7 @@
             <div class="col-12 col-12-medium" *ngIf="users.length > 0">
                 <div class="wrap">
                     <div *ngFor="let user of users" class="m">
-                        <app-userscards [user]="user"></app-userscards>
+                        <app-userscards [user]="user" (click)="details(user.id)"></app-userscards>
                     </div>
                 </div>
             </div>
