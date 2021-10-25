@@ -3,8 +3,12 @@
         <div class="row">
             <div class="col-12 col-12-medium" >
 
+                <div class="center" *ngIf="spinner">
+                    <mat-spinner></mat-spinner>
+                </div>
+
                 <div class="wrap">
-                    <div *ngFor="let a of albums">
+                    <div *ngFor="let a of albums" class=" animate__animated animate__fadeIn">
                         <app-cards [album]="a" [isAlbum]="infoAlbum" ></app-cards>
                     </div>
                 </div>

@@ -11,6 +11,7 @@ export class AlbumsComponent implements OnInit {
 
   albums: Albums[] = [];
   infoAlbum: boolean = true;
+  spinner: boolean = true;
 
   constructor( private jsonService: JsonPlaceholderService ) { }
 
@@ -18,6 +19,7 @@ export class AlbumsComponent implements OnInit {
 
     this.jsonService.getAll<Albums[]>('albums').subscribe( a => {
       this.albums = a;
+      this.spinner = false;
     });
   }
 

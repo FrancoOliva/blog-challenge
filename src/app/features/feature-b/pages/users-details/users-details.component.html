@@ -23,7 +23,7 @@
 
                 <!-- Info User -->
                 <div class="center">
-                    <app-userscards [user]="user" [userInfo]="infoUser"></app-userscards>
+                    <app-userscards [user]="user" [userInfo]="infoUser" class="animate__animated animate__backInRight"></app-userscards>
                 </div>
 
             
@@ -33,7 +33,7 @@
 
                 <div class="wrap">
                     <!-- Posts -->
-                <div *ngFor="let post of posts">
+                <div *ngFor="let post of posts" class="animate__animated animate__fadeIn">
                     <app-cards [post]="post" [isPost]="infoPosts" (click)="getDetails('posts',post.id)"></app-cards>
                 </div>
                 </div>
@@ -44,7 +44,7 @@
 
                 <div class="wrap">
                     <!-- Albums -->
-                <div *ngFor="let album of albums">
+                <div *ngFor="let album of albums" class="animate__animated animate__fadeIn">
                     <app-cards [album]="album" [isAlbum]="infoAlbums" (click)="getDetails('albums',album.id)"></app-cards>
                 </div>
                 </div>
@@ -54,8 +54,8 @@
             <div class="col-10 col-12-medium" *ngIf="infoTodos">
 
                 <div class="wrap">
-                    <!-- Todos -->
-                <div *ngFor="let todo of todos">
+                    <!-- To dos -->
+                <div *ngFor="let todo of todos" class="animate__animated animate__fadeIn">
                     <app-cards [todos]="todo" [isTodos]="infoTodos" (click)="getDetails('todos',todo.id)"></app-cards>
                 </div>
                 </div>

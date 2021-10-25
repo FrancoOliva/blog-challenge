@@ -22,6 +22,8 @@ export class MyprofileComponent implements OnInit {
   infoAlbums: boolean = false;
   infoTodos: boolean = false;
 
+  spinner: boolean = true;
+
   back: boolean = false;
 
 
@@ -31,6 +33,8 @@ export class MyprofileComponent implements OnInit {
 
       this.user = JSON.parse( localStorage.getItem('userON')! );
       this.infoUser = true;
+
+      this.spinner = false;
       
     }
 
@@ -40,18 +44,23 @@ export class MyprofileComponent implements OnInit {
 
     if( this.user ){
 
+      this.spinner = true;
+
       this.jsonService.getData<Posts[]>('users', this.user.id, 'posts').subscribe( p => {
 
         this.posts = p;
+        this.spinner = false;
         
       });
 
       this.jsonService.getData<Albums[]>('users', this.user.id, 'albums').subscribe( a => {
         this.albums = a;
+        this.spinner = false;
       });
 
       this.jsonService.getData<Todos[]>('users', this.user.id, 'todos').subscribe( td => {
         this.todos = td;
+        this.spinner = false;
       })
       
     }

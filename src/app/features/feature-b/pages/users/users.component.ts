@@ -12,6 +12,7 @@ import { JsonPlaceholderService } from '../../../../core/services/json-placehold
 export class UsersComponent implements OnInit {
 
   users: User[] = [];
+  spinner: boolean = true;
 
   constructor( private jsonService: JsonPlaceholderService, private router: Router ) { }
 
@@ -19,6 +20,7 @@ export class UsersComponent implements OnInit {
 
     this.jsonService.getAll<User[]>('users').subscribe( u => {
       this.users = u;
+      this.spinner = false;
     });
   }
 

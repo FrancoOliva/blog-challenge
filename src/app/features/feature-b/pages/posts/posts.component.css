@@ -7,3 +7,8 @@
 app-cards {
     height: 410px;
 }
+
+.center {
+    display: flex;
+    justify-content: center;
+}

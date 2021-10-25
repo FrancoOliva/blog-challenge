@@ -19,12 +19,15 @@
                     </ul>
                 </section>
             </div>
+            <div class="col-10 col-12-medium center" *ngIf="spinner">
+                <mat-spinner></mat-spinner>
+            </div>
 
             <div class="col-10 col-12-medium" *ngIf="infoUser">
 
                 <!-- Main content -->
                 <div class="center">
-                    <app-userscards [user]="user" [userInfo]="infoUser"></app-userscards>
+                    <app-userscards [user]="user" [userInfo]="infoUser" class="animate__animated animate__backInRight"></app-userscards>
                 </div>
 
             
@@ -34,7 +37,7 @@
 
                 <div class="wrap">
                     <!-- Main content -->
-                <div *ngFor="let post of posts">
+                <div *ngFor="let post of posts" class="animate__animated animate__fadeIn">
                     <app-cards [post]="post" [isPost]="infoPosts"></app-cards>
                 </div>
                 </div>
@@ -45,7 +48,7 @@
 
                 <div class="wrap">
                     <!-- Main content -->
-                <div *ngFor="let album of albums">
+                <div *ngFor="let album of albums" class="animate__animated animate__fadeIn">
                     <app-cards [album]="album" [isAlbum]="infoAlbums"></app-cards>
                 </div>
                 </div>
@@ -56,7 +59,7 @@
 
                 <div class="wrap">
                     <!-- Main content -->
-                <div *ngFor="let todo of todos">
+                <div *ngFor="let todo of todos" class="animate__animated animate__fadeIn">
                     <app-cards [todos]="todo" [isTodos]="infoTodos"></app-cards>
                 </div>
                 </div>

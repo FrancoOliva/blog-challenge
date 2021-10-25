@@ -11,9 +11,13 @@
                 
             </div> -->
             <div class="col-12 col-12-medium">
+
+                <div class="center" *ngIf="spinner">
+                    <mat-spinner></mat-spinner>
+                </div>
                 
                 <div class="wrap">
-                    <div *ngFor="let td of todos">
+                    <div *ngFor="let td of todos" class="animate__animated animate__fadeIn">
                         <app-cards [todos]="td" [isTodos]="infoTodos"></app-cards>
                     </div>                    
                 </div>

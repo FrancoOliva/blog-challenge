@@ -11,6 +11,7 @@ export class TodosComponent implements OnInit {
 
   todos: Todos[] = [];
   infoTodos: boolean = true;
+  spinner: boolean = true;
 
   constructor( private jsonService: JsonPlaceholderService ) { }
 
@@ -19,6 +20,7 @@ export class TodosComponent implements OnInit {
     this.jsonService.getAll<Todos[]>('todos').subscribe( td => {
 
       this.todos = td;
+      this.spinner = false;
 
     });
 

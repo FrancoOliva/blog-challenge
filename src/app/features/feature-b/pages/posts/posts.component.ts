@@ -11,6 +11,7 @@ export class PostsComponent implements OnInit {
 
   posts: Posts[] = [];
   infoPost: boolean = true;
+  spinner: boolean = true;
 
   constructor( private jsonService: JsonPlaceholderService) { }
 
@@ -18,6 +19,7 @@ export class PostsComponent implements OnInit {
 
     this.jsonService.getAll<Posts[]>('posts').subscribe( p => {
       this.posts = p;
+      this.spinner = false;
     });
   }
 

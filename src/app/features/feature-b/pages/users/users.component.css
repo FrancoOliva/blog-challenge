@@ -11,3 +11,8 @@
 app-userscards {
     cursor: pointer;
 }
+
+.center {
+    display: flex;
+    justify-content: center;
+}
