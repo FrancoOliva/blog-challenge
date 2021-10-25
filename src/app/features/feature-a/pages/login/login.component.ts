@@ -68,8 +68,10 @@ export class LoginComponent implements OnInit {
       }
     }
 
+  }
 
-
+  navegar(){
+    this.router.navigate(['blog-challenge/mi-perfil']);
   }
 
 }

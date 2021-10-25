@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
 import { Comments } from '../interfaces/comments.interface';
 import { Posts } from '../interfaces/posts.interface';
@@ -19,6 +19,16 @@ export class JsonPlaceholderService {
   url: string = 'https://jsonplaceholder.typicode.com';
 
   constructor( private http: HttpClient ) { }
+
+  isON():Observable<boolean>{
+
+    if( localStorage.getItem('userON') ){
+      return of(true);
+    } else {
+      return of(false);
+    }
+    
+  }
 
   
   // GET -> ex: users/1 - albums/1 - posts/1 - todos/1
