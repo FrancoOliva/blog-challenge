@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Todos } from 'src/app/core/interfaces/todos.interface';
+import { JsonPlaceholderService } from '../../../../core/services/json-placeholder.service';
 
 @Component({
   selector: 'app-todos',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodosComponent implements OnInit {
 
-  constructor() { }
+  todos: Todos[] = [];
+  infoTodos: boolean = true;
+
+  constructor( private jsonService: JsonPlaceholderService ) { }
 
   ngOnInit(): void {
+
+    this.jsonService.getAll<Todos[]>('todos').subscribe( td => {
+
+      this.todos = td;
+      
+    });
   }
 
 }

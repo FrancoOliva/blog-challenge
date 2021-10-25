@@ -1,3 +1,19 @@
-<div class="container">
-    <p>todos works!</p>
-</div>
+<section id="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-2 col-12-medium">
+                Buscador
+            </div>
+            <div class="col-10 col-12-medium">
+                
+                <div class="wrap">
+                    <div *ngFor="let td of todos">
+                        <app-cards [todos]="td" [isTodos]="infoTodos"></app-cards>
+                    </div>
+                    
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
