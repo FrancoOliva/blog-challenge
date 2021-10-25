@@ -1,1 +1,67 @@
-<p>users-details works!</p>
+<!-- Content -->
+<section id="content">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-2 col-12-medium">
+                <!-- Sidebar -->
+                <section>
+                    <header class="txt-center">
+                        <h2>Menú</h2>
+                        <hr>
+                    </header>
+                    <ul class="link-list">
+                        <li><a (click)="userPosts()">Ver mis posts</a></li>
+                        <li><a (click)="userAlbums()">Ver mis albums</a></li>
+                        <li><a (click)="userTodos()">Ver mis TO DOs</a></li>
+                        <li *ngIf="back"><a (click)="menuBack()">Volver</a></li>
+                    </ul>
+                </section>
+            </div>
+
+            <div class="col-10 col-12-medium" *ngIf="infoUser">
+
+                <!-- Info User -->
+                <div class="center">
+                    <app-userscards [user]="user" [userInfo]="infoUser"></app-userscards>
+                </div>
+
+            
+            </div>
+
+            <div class="col-10 col-12-medium" *ngIf="infoPosts">
+
+                <div class="wrap">
+                    <!-- Posts -->
+                <div *ngFor="let post of posts">
+                    <app-cards [post]="post" [isPost]="infoPosts" (click)="getDetails('posts',post.id)"></app-cards>
+                </div>
+                </div>
+            
+            </div>
+
+            <div class="col-10 col-12-medium" *ngIf="infoAlbums">
+
+                <div class="wrap">
+                    <!-- Albums -->
+                <div *ngFor="let album of albums">
+                    <app-cards [album]="album" [isAlbum]="infoAlbums" (click)="getDetails('albums',album.id)"></app-cards>
+                </div>
+                </div>
+            
+            </div>
+
+            <div class="col-10 col-12-medium" *ngIf="infoTodos">
+
+                <div class="wrap">
+                    <!-- Todos -->
+                <div *ngFor="let todo of todos">
+                    <app-cards [todos]="todo" [isTodos]="infoTodos" (click)="getDetails('todos',todo.id)"></app-cards>
+                </div>
+                </div>
+            
+            </div>
+    
+        </div>
+    </div>
+</section>

@@ -39,19 +39,10 @@ export class JsonPlaceholderService {
 
   } 
   
-  getUserPosts(id: number):Observable<Posts[]>{
-    return this.http.get<Posts[]>(`${this.url}users/${ id }/posts`);
-  }
-  
-  getPostById(idPost: number):Observable<Posts>{
-    return this.http.get<Posts>(`${ this.url }posts/${ idPost }`);
-  }
-
-  
 
 
-
-  // DELETE - CREATE - PATCH - UPDATE
+  // ********************* -> Generizar código si es necesario <- *********************
+  // DELETE - CREATE - PATCH - UPDATE 
   deletePost(idPost: number){
     return this.http.delete(`https://jsonplaceholder.typicode.com/posts/${ idPost }`);
   }

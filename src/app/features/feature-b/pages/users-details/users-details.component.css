@@ -1,0 +1,17 @@
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.txt-center {
+    text-align: center;
+}
+
+a {
+    cursor: pointer;
+}

@@ -1,4 +1,4 @@
-.space {
+.center {
     display: flex;
     justify-content: center;
 }
@@ -12,10 +12,7 @@
     text-align: center;
 }
 
-button {
-    margin: 2px;
-}
-
 a {
     cursor: pointer;
 }
+
